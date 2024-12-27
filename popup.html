@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>HTML5 Boilerplate</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+
+    <body>
+        <h1>Page Title</h1>
+        <button id="hi-btn">Click</button>
+        <script>
+            // Output: State where I fetch the javascript file upon the button rendering on page
+            // Input: HTML, id="hi-btn", javascript
+            // Description: Use this code to extend javascript without having to make changes to this file.
+            // For example, you can simply exchange the filename or you can add multiple, src1, src2, src3 and add those files
+            const myWorker1 = new Worker("background.js");
+            myWorker1()();
+
+            function loadJS(src, callback) {
+                const script = document.createElement("script");
+                script.src = src;
+                script.onload = callback;
+                document.head.appendChild(script);
+            }
+
+            loadJS("pop.js", () => {
+                console.log("Script loaded successfully!");
+            });
+        </script>
+    </body>
+</html>
